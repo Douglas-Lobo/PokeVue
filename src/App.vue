@@ -1,28 +1,51 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+
+
+    <div>
+        <Navbar/>
+        <div class="container">
+            <Pokemons/>
+        </div>
+        <Footer/>
+        
+    </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+// import Pokemons from "./components/Pokemons.vue";
+import Pokemons from './components/Pokemons.vue';
+import Navbar from './components/layouts/Navbar.vue';
+import Footer from './components/layouts/Footer.vue';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    data(){
+        return{
+            visibility:true
+            
+        }
+    },
+    components:{
+        Pokemons, Navbar, Footer
+        },
+    methods:{
+        deleteToast(){
+            this.visibility = false
+        }
+    }
+  
+
 }
+
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style >
+body{
+    background: #8E2DE2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
+
 </style>
